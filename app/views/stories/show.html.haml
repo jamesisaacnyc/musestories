@@ -18,6 +18,6 @@
 							= link_to like_story_path(@story), method: :put, class: "btn btn-default" do 
 								%span.glyphicon.glyphicon-heart
 									=@story.get_upvotes.size
-							- if user_signed_in?
+							- if @story.user == current_user
 								= link_to "Edit", edit_story_path, class: "btn btn-default"
 								= link_to "Delete", story_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
