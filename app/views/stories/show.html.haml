@@ -10,8 +10,9 @@
 				.row
 					.col-md-6
 						%p.user
-						Submitted by
+						Shared by:
 						= link_to @story.user.email, user_path
+						%h4= @story.location
 					.col-md-6
 						.btn-group.pull-right	
 							= link_to like_story_path(@story), method: :put, class: "btn btn-default" do 

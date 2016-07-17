@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.4'
+ruby '2.2.3'
 # My Additions
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'devise', '~> 4.2'

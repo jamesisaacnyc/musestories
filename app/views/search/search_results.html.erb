@@ -1,0 +1,26 @@
+<h1>Results</h1>
+<% if @stories.empty? %>
+<p>
+	Sorry your Search for '<%= params[:keyword] %>' returned no Results
+</p>
+
+<% end %>
+<% @stories.each do |story| %>
+  <div class="box panel panel-default">
+    <%= link_to (image_tag story.image.url(:large)), story %>
+    <div class="panel-body">
+      <h2>
+        <%= link_to story.title, story %>
+      </h2>
+      <h3>
+        <%= story.user.username %>
+      </h3>
+      <h3>
+        <%= story.user.hometown %>
+      </h3>
+      <h3>
+        <%= story.user.age %>
+      </h3>
+    </div>
+  </div>
+<% end %>
