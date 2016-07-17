@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-sm-6">
+     <div class="card-background">
+           <div class="cardheader">
+
+                </div>
+
+<div class="col-md-3">
+  <div class="container">
+    <%= image_tag @user.avatar.url(:thumb)  %>
+    </div>
+    <h1>
+      <%= @user.username %>
+    </h1>
+    <h2>
+      <%= @user.hometown %>
+    </h2>
+    <h2>
+      <%= @user.age %>
+    </h2>
+    <hr/>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+    <% @user_stories.each do |story| %>
+      <%= link_to (image_tag story.image.url(:medium)), story %>
+    <% end %>
+
+

@@ -1,0 +1,12 @@
+<div class="row" id="stories">
+  <% @stories.each do |story| %>
+    <div class="col-md-6 portfolio-item">
+    <%= link_to (image_tag story.image.url(:medium)), story %>
+      <div class="panel-body">
+        <h2>
+          <%= link_to story.title, story %>
+        </h2>
+      </div>
+    </div>
+  <% end %>
+</div>

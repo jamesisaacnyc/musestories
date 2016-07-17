@@ -1,6 +1,0 @@
-#stories.transitions-enabled
-	- @stories.each do |story|
-		.box.panel.panel-default
-			= link_to (image_tag story.image.url(:large)), story
-			.panel-body
-				%h2= link_to story.title, story

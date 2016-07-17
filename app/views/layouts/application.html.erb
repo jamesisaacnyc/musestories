@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+  <title>Muse</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="col-md-3">
+      <%= form_tag search_results_path, :class => "navbar-form", :role =>"search", :method => :get do %>
+        <%= text_field_tag :keyword, params[:keyword] %>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
+    <div class="container">
+      <div class="navbar-brand">
+        <%= link_to "Muse", root_path %>
+      </div>
+      <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+          <% # %li= link_to "Seach", search_path %>
+          <li>
+            <%= link_to "New Story", new_story_path %>
+          </li>
+          <li>
+            <%= link_to "Account", edit_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+      <% else  %>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "Sign In", new_user_session_path %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
+</body>
+<div class="container">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-info" %>
+  <% end %>
+  <%= yield %>
+</div>
