@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 # My Additions
-gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'bootstrap_form'
 gem 'devise', '~> 4.2'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'

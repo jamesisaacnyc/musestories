@@ -3,31 +3,6 @@ class StoriesController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 
-# 	 def party_time
-#         # Quick and Easy Way
-#         uri = "http://swapi.co/api/people/1"
-#         response = HTTParty.get(uri)
-
-#         puts '-----------------------------------'
-#         puts response
-#         puts '-----------------------------------'
-#         puts response.class
-#         puts '-----------------------------------'
-#         puts response.body
-#         puts '-----------------------------------'
-#         puts response.code
-#         puts '-----------------------------------'
-#         puts response.message
-#         puts '-----------------------------------'
-#         puts response.headers.inspect
-#         puts '-----------------------------------'
-
-#         parsed_json = JSON.parse(response)
-#         puts "PARSED TO JSON"
-#         puts parsed_json
-#     end
-# end
-
 	def destroy
 		@story.destroy
 		redirect_to root_path

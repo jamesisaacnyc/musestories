@@ -1,7 +1,7 @@
 %h1= @user.username
-%h1= @user.hometown
-%h1= @user.age
+%h4= @user.hometown
+%h4= @user.age
 - @user_stories.each do |story|
-	= link_to story.title, story_path(story)
+	= link_to (image_tag story.image.url(:medium)), story
 
 
