@@ -1,16 +1,15 @@
 source 'https://rubygems.org'
 
 # My Additions
-gem 'ruby'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'devise', '~> 4.2'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
-gem 'paperclip', '~> 5.0'
+gem 'paperclip', '~> 4.2.1'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'acts_as_votable', '~> 0.10.0'
-gem 'aws-sdk', '~> 2.3.3'
-gem 'httparty'
+gem 'aws-sdk', '< 2.0'
 gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
