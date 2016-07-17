@@ -8,7 +8,7 @@ class SearchController < ApplicationController
   end
 
   def search_results
-  	@stories = Story.where("location LIKE ?", "%#{params[:keyword]}%")
+  	@stories = Story.where("location iLIKE ?", "%#{params[:keyword]}%")
   end
  
 
