@@ -10,6 +10,8 @@
 
   .form-group
     = f.input :username, input_html: { class: 'form-control' }
+  
+    = image_tag current_user.avatar.url(:thumb)
 
   .form-group
     = f.input :avatar, input_html: { class: 'form-control' }  

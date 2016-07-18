@@ -1,31 +1,35 @@
 
-<div class="container">
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
   <div class="row">
     <div class="col-lg-3 col-sm-6">
-     <div class="card-background">
-           <div class="cardheader">
-
-                </div>
-
-<div class="col-md-3">
-  <div>
+      
+<div id="user-info">
+    <div id="avatar">
     <%= image_tag current_user.avatar.url(:thumb)  %>
     </div>
-    <h1>
+     <div id="text">
+    <h1 id="info"> Username:
       <%= current_user.username %>
     </h1>
-    <h2>
+    <h2 id="info"> Hometown:
       <%= current_user.hometown %>
     </h2>
-    <h2>
+    <h2 id="info"> Age:
       <%= current_user.age %>
     </h2>
-    <hr/>
+    <button>
+  <%= link_to "Edit Account Info", edit_user_registration_path %>
+    </button>
+
+    </div>
   </div>
 </div>
-</div>
-</div>
-</div>
+  </div>
 <hr/>
   <% if current_user.stories.empty? %>
 <p>
@@ -35,6 +39,47 @@
     <% current_user.stories.each do |story| %>
       <%= link_to (image_tag story.image.url(:medium)), story %>
     <% end %>
+</body>
+<style>
+  #user-info {
+    padding-left: 20px;
+    width: 1000px;
+    display: block; 
+    background-color: lightgrey;
+  }
 
+  #text { 
+    padding-left: 10px;
+    width: 350px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 1px;
+      box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3); 
+    position: relative;
+      top: 45px;
+      left: 200px;
 
+   }
 
+   #avatar {
+    display: inline-block;
+    border-radius: 1px;
+      box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3); 
+    position: relative;
+      left: 170px;
+      bottom: 45px;
+    }
+
+    #info {
+      color: #BD1E23;
+     }
+
+    button { 
+      position: relative;
+        bottom: 20px;
+        left: 200px;
+
+     }
+
+</style>
+</html>
