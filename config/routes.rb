@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'search' => 'search#search', as: 'search'
   get 'search_results' => 'search#search_results', as: 'search_results'
 
-devise_for :users
+devise_for :users, controllers: { registrations: "registrations" }
 resources :users
 resources :stories do
   	member do
